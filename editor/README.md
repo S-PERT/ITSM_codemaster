@@ -131,3 +131,16 @@ npm run build:editor
 
 현재 프로젝트의 `npm run test:editor`는 글·이미지 유지 등을 검사합니다.
 `webapp/test/editor.html`은 SAP 업무 데이터를 수정하지 않는 별도 샘플 화면입니다.
+
+
+## 라이선스
+
+현재 번들에 포함된 Tiptap·ProseMirror 및 관련 편집 패키지는 MIT 라이선스입니다.
+DOMPurify는 MPL-2.0 또는 Apache-2.0 중 선택할 수 있으며, 이 번들은 Apache-2.0 조건으로 사용합니다.
+Tiptap의 유료 Pro 확장이나 Cloud 서비스는 사용하지 않습니다.
+
+`npm run build:editor`는 실제 번들에 들어간 패키지를 확인하여 저작권 고지와 라이선스 전문을
+`webapp/ext/vendor/tiptap.js.LEGAL.txt`에 함께 수록합니다.
+다른 앱에 복사하거나 고객에게 배포할 때 이 파일도 반드시 함께 전달해야 합니다.
+라이브러리 버전을 올리거나 유료 기능을 추가할 때는 해당 버전의 조건을 다시 확인합니다.
+이 안내는 현재 에디터 의존성에 대한 것으로, SAPUI5 이용 계약 등 앱 전체의 조건을 대신하지 않습니다.
