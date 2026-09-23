@@ -60,7 +60,7 @@
         "sap.m": {},
         "sap.ui.core": {},
         "sap.fe.templates": {},
-        "sap.ui.richtexteditor": {}
+        "sap.f": {}
       }
     },
     "extends": {
@@ -99,20 +99,35 @@
       }
     },
     "resources": {
-      "css": []
+      "css": [
+        {
+          "uri": "css/editor.css"
+        }
+      ]
     },
     "routing": {
-      "config": {},
+      "config": {
+        "flexibleColumnLayout": {
+          "defaultTwoColumnLayoutType": "TwoColumnsMidExpanded",
+          "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+        },
+        "routerClass": "sap.f.routing.Router"
+      },
       "routes": [
         {
           "pattern": ":?query:",
           "name": "mainList",
-          "target": "mainList"
+          "target": [
+            "mainList"
+          ]
         },
         {
           "pattern": "main({key}):?query:",
           "name": "mainObjectPage",
-          "target": "mainObjectPage"
+          "target": [
+            "mainList",
+            "mainObjectPage"
+          ]
         }
       ],
       "targets": {
@@ -140,7 +155,9 @@
               },
               "initialLoad": "Enabled"
             }
-          }
+          },
+          "controlAggregation": "beginColumnPages",
+          "contextPattern": ""
         },
         "mainObjectPage": {
           "type": "Component",
@@ -165,9 +182,17 @@
                 }
               }
             }
-          }
+          },
+          "controlAggregation": "midColumnPages",
+          "contextPattern": "/main({key})"
         }
       }
+    },
+    "rootView": {
+      "viewName": "sap.fe.templates.RootContainer.view.Fcl",
+      "type": "XML",
+      "async": true,
+      "id": "appRootView"
     }
   },
   "sap.fiori": {

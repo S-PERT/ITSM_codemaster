@@ -1,5 +1,5 @@
-<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
-	<VBox id="idEditorContainer" height="1000px">
-		<!-- <Text text="Richtexteditor" /> -->
-	</VBox>
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:editor="zsp.itsm.codemaster.ext.control">
+    <VBox id="idEditorContainer" width="100%">
+        <editor:TiptapEditor id="contentEditor" value="{path: 'Content', mode: 'TwoWay'}" editable="{ui>/isEditable}" />
+    </VBox>
 </core:FragmentDefinition>
